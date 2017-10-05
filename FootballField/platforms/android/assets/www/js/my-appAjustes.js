@@ -22,6 +22,7 @@ function initapp(){
   $$('#btnAyuda').on('click', abrirAyuda);
   $$('#btnInfo').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
+  $$('#btnCerrarSesion').on('click', cerrarSesion);
 }
 
 function cerrarMenu() {
@@ -55,4 +56,10 @@ function abrirAyuda() {
 function abrirInfo() {
   myApp.showPreloader("Abriendo Información");
   document.location="info.html"
+}
+
+function cerrarSesion() {
+  myApp.showPreloader("Cerrando Sesión");
+  //por ahora solo va al principio, despues hay que usar flag y token
+  document.location="index.html"
 }

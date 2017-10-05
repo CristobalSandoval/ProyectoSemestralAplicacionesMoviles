@@ -26,5 +26,5 @@ function volverALogIn() {
 }
 
 /*
-  Registrar los datos en la base de datos.
+
 */
