@@ -25,7 +25,6 @@ function initapp(){
   $$('#btnCerrarSesion').on('click', cerrarSesion);
 }
 
-
 function cerrarMenu() {
   myApp.closePanel("left");
 }
@@ -41,7 +40,8 @@ function abrirCanchas() {
 }
 
 function abrirPerfil() {
-  myApp.closePanel("left");
+  myApp.showPreloader("Abriendo Perfil");
+  document.location="perfil.html"
 }
 
 function abrirAjustes() {
@@ -50,8 +50,7 @@ function abrirAjustes() {
 }
 
 function abrirAyuda() {
-  myApp.showPreloader("Abriendo Ayuda");
-  document.location="ayuda.html"
+  myApp.closePanel("left");
 }
 
 function abrirInfo() {

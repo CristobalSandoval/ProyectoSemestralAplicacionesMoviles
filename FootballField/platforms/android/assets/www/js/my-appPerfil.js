@@ -25,6 +25,7 @@ function initapp(){
   $$('#btnCerrarSesion').on('click', cerrarSesion);
 }
 
+
 function cerrarMenu() {
   myApp.closePanel("left");
 }

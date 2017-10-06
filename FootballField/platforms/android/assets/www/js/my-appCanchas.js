@@ -23,8 +23,13 @@ function initapp(){
   $$('#btnInfo').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
+  $$('#btnCancha1').on('click', abrirCancha);
 }
 
+function abrirCancha() {
+  myApp.showPreloader("Abriendo Cancha");
+  document.location="cancha.html"
+}
 function cerrarMenu() {
   myApp.closePanel("left");
 }

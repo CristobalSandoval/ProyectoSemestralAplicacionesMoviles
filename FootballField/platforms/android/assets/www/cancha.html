@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval';style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; connect-src 'self' 'unsafe-inline' 'unsafe-eval' blob: ws: *;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Cancha</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Contenido del menu lateral-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p><b>Menú</b></p>
+        <div class="content-block">
+          <p><a href="#" id="btnPantallaPrincipal" class="button">Pantalla Principal</a></p>
+          <p><a href="#" id="btnCanchas" class="button">Canchas</a></p>
+          <p><a href="#" id="btnPerfil" class="button">Perfil</a></p>
+        </div>
+        <p><b>Otras Opciones</b></p>
+        <div class="content-block">
+          <p><a href="#" id="btnAjustes"class="button">Ajustes</a></p>
+          <p><a href="#" id="btnAyuda" class="button">Ayuda</a></p>
+          <p><a href="#" id="btnInfo" class="button">Información de la App</a></p>
+        </div>
+        <p><a href="#" id="btnCerrarMenu" class="button">Cerrar Menú</a></p>
+        <p><a href="#" id="btnCerrarSesion" class="button">Cerrar Sesión</a></p>
+      </div>
+    </div>
+
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div style="background-color:black;" class="navbar">
+          <div class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            <div class="left">
+            </div>
+            <div class="center sliding"><FONT COLOR="white">Cancha</FONT></div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div style="background-color:green;" class="page-content">
+              <!-- Cuerpo app-->
+              <div class="content-block">
+                <center>
+                  <p><h1><FONT COLOR="black"><b>Nombre de la Cancha </b> <span id="NombreCancha"></span></FONT></h3></p>
+                </br>
+                <div class="content-block inset">
+                  <div class="content-block-inner">
+                    <p><h3><b><FONT COLOR="black">Información</FONT></b></h3></p>
+                    <p ALIGN="justify"><b>Valor por hora: </b> <span id="ValorHora"></span></p>
+                    <p ALIGN="justify"><b>Horario: </b> <span id="Horario"></span></p>
+                    <p ALIGN="justify"><b>Dirección: </b> <span id="Dirección"></span></p>
+                    <p ALIGN="justify"><b>Ciudad: </b> <span id="Ciudad"></span></p>
+                    <p ALIGN="justify"><b>Celular: </b> <span id="Celular"></span></p>
+                  </div>
+                </div>
+
+                  <div class="content-block inset">
+                    <div class="content-block-inner">
+                      <b><h3><FONT COLOR="black">Descripción</FONT></h3></b>
+                      <p ALIGN="justify"><FONT COLOR="black"></br> Nuestro centro recreativo cuenta con n canchas, m cuentan con cesped sintetico
+                        y el resto con cesped natural. J canchas tienen la medida Q*W mts2 y una mide R*T mt 2. Además, en cuenta
+                        con servicios de higiene. <span id="NombreCancha"></span> </FONT></p>
+                    </div>
+                  </div>
+                  <div class="content-block inset">
+                    <div class="content-block-inner">
+                      <b><h3><FONT COLOR="black">Galeria</FONT></h3></b>
+                      <div class="row">
+                        <div class="col-25">
+                          <img id="img1" src="" width="50px" height="50px" />
+                        </div>
+                        <div class="col-25">
+                          <img id="img2" src="" width="50px" height="50px" />
+                        </div>
+                        <div class="col-25">
+                          <img id="img3" src="" width="50px" height="50px" />
+                        </div>
+                        <div class="col-25">
+                          <img id="img4" src="" width="50px" height="50px" />
+                        </div>
+                        <div class="col-25">
+                          <img id="img5" src="" width="50px" height="50px" />
+                        </div>
+                        <div class="col-25">
+                          <img id="img6" src="" width="50px" height="50px" />
+                        </div>
+                        <div class="col-25">
+                          <img id="img7" src="" width="50px" height="50px" />
+                        </div>
+                        <div class="col-25">
+                          <img id="img8" src="" width="50px" height="50px" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content-block inset">
+                    <div class="content-block-inner">
+                      <b><h3><FONT COLOR="black">Ubicación</FONT></h3></b>
+                      <img id="img8" src="" width="250px" height="250px" />
+                    </div>
+                  </div>
+                  <a style="background-color:white; border-color:black;" id="disponibilidad" href="#" class="button"><FONT COLOR="black">VER DISPONIBILIDAD</FONT></a>
+
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-appAyuda.js"></script>
+  </body>
+</html>
