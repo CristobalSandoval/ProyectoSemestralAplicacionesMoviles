@@ -23,6 +23,19 @@ function initapp(){
   $$('#btnInfo').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
+  document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
+function onBackKeyDown(){
+ navigator.notification.confirm("DESEA SALIR DE FOOTBALLFIELD?", cerrarAPP,"ADVERTENCIA", "Si,No");
+}
+
+function cerrarAPP(e){
+  if(e==1){
+   navigator.app.exitApp();
+  }else{
+    return;
+  }
 }
 
 function cerrarMenu() {
@@ -61,5 +74,6 @@ function abrirInfo() {
 function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
+  localStorage.clear();
   document.location="index.html"
 }

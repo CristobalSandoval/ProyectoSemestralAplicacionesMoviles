@@ -24,6 +24,11 @@ function initapp(){
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
   $$('#btnCancha1').on('click', abrirCancha);
+  document.addEventListener("backbutton", volverPPrincipal, false);
+}
+
+function volverPPrincipal(e){
+ document.location="pPrincipal.html"
 }
 
 function abrirCancha() {
@@ -66,5 +71,6 @@ function abrirInfo() {
 function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
+  localStorage.clear();
   document.location="index.html"
 }

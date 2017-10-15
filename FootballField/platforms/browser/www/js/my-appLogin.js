@@ -17,10 +17,54 @@ function initapp(){
 
   $$("#iniciar").on("click", click_btn);
   $$("#registrar").on("click", click_regis);
+  document.addEventListener("backbutton", onBackKeyDown, false);
 }
 
+function onBackKeyDown(){
+ navigator.notification.confirm("Desea salir de FootballField?", cerrarAPP,"ADVERTENCIA!", "Si,No");
+}
+function cerrarAPP(e){
+  if(e==1){
+   navigator.app.exitApp();
+  }else{
+    return;
+  }
+}
+
+
+function miFunc() {
+  if(localStorage.getItem("usr") != null || localStorage.getItem("pss" != null)){
+    myApp.hidePreloader();
+    var usuario = localStorage.getItem("usr");
+    var pass = localStorage.getItem("pss");
+    $$.ajax({
+      url: 'http://servicioswebmoviles.hol.es/index.php/LOGIN_UBB',
+      method: 'POST',
+      dataType: 'json',
+      data: {
+        login: usuario,
+        pass: pass
+      },
+      success: function(data){
+        myApp.hidePreloader();
+        if(data.resp){
+          document.location = "pPrincipal.html";
+          }else{
+            myApp.alert(data.info,"Advertencia");
+          }
+      },
+      error: function(){
+        myApp.hidePreloader();
+        myApp.alert("El WS no ha respondido","Error");
+      }
+    });
+  }else{
+    return;
+  }
+}
+
+
 function click_btn(){
-  console.log("click");
   var usuario = $$('#username').val();
   var pass = $$('#password').val();
 
@@ -39,6 +83,8 @@ function click_btn(){
         myApp.hidePreloader();
         if(data.resp){
           document.location = "pPrincipal.html";
+          localStorage.setItem("usr", $$('#username').val());
+          localStorage.setItem("pss", $$('#password').val());
           }else{
             myApp.alert(data.info,"Advertencia");
           }

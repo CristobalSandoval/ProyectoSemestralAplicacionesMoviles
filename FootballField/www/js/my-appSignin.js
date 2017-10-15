@@ -18,6 +18,11 @@ function initapp(){
 
   //$$("#registrar").on("click", click_regis);
   $$("#volver").on("click", volverALogIn);
+  document.addEventListener("backbutton", volverPPrincipal, false);
+}
+
+function volverPPrincipal(e){
+ document.location="index.html"
 }
 
 //solo por prueba
