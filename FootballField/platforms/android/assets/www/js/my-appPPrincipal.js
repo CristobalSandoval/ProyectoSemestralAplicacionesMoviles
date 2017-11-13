@@ -17,7 +17,6 @@ function initapp(){
   console.log("dispositivo listo!!!");
   $$('#btnPantallaPrincipal').on('click', abrirPantallaPrincipal);
   $$('#btnCanchas').on('click', abrirCanchas);
-  $$('#btnPerfil').on('click', abrirPerfil);
   $$('#btnAjustes').on('click', abrirAjustes);
   $$('#btnAyuda').on('click', abrirAyuda);
   $$('#btnInfo').on('click', abrirInfo);
@@ -51,11 +50,6 @@ function abrirCanchas() {
   document.location="canchas.html"
 }
 
-function abrirPerfil() {
-  myApp.showPreloader("Abriendo Perfil");
-  document.location="perfil.html"
-}
-
 function abrirAjustes() {
   myApp.showPreloader("Abriendo Ajustes");
   document.location="ajustes.html"
@@ -75,5 +69,5 @@ function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
   localStorage.clear();
-  document.location="index.html"
+  document.location="login.html"
 }

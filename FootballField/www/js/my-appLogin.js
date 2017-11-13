@@ -17,8 +17,17 @@ function initapp(){
 
   $$("#iniciar").on("click", click_btn);
   $$("#registrar").on("click", click_regis);
+  $$("#uiDueño").on("click", click_ui);
   document.addEventListener("backbutton", onBackKeyDown, false);
 }
+
+//Solo de prueba
+function click_ui() {
+  document.location = "pPrincipal2.html";
+}
+
+
+//Solo de prueba
 
 function onBackKeyDown(){
  navigator.notification.confirm("Desea salir de FootballField?", cerrarAPP,"ADVERTENCIA!", "Si,No");
@@ -102,5 +111,5 @@ function click_btn(){
 
 function click_regis() {
   myApp.showPreloader("Cargando");
-  document.location="signin.html"
+  document.location="signin0.html"
 }

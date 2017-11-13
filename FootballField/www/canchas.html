@@ -26,7 +26,6 @@
         <div class="content-block">
           <p><a href="#" id="btnPantallaPrincipal" class="button">Pantalla Principal</a></p>
           <p><a href="#" id="btnCanchas" class="button">Canchas</a></p>
-          <p><a href="#" id="btnPerfil" class="button">Perfil</a></p>
         </div>
         <p><b>Otras Opciones</b></p>
         <div class="content-block">
@@ -57,41 +56,40 @@
         <div class="pages navbar-through toolbar-through">
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
+            <form class="searchbar searchbar-init" data-search-list=".list-block-search" data-search-in=".item-title" data-found=".searchbar-found" data-not-found=".searchbar-not-found">
+              <div class="searchbar-input">
+            <input type="search" placeholder="Buscar">
+            <a href="#" class="searchbar-clear"></a>
+        </div>
+        <a href="#" class="searchbar-cancel">Cancelar</a>
+    </form>
+
+    <div class="searchbar-overlay"></div>
             <!-- Scrollable page content-->
-            <div style="background-color:green;" class="page-content">
+            <div style="background-color:black;" class="page-content">
+              <div class="content-block searchbar-not-found">
+                <!-- Añadir mensaje de no encontrado -->
+                </div>
+              </br>s
+              <a id="agregar" class="button">Agregar Cancha</a>
             </br>
             </br>
               <div class="card">
-      <div class="list-block">
-    <ul>
-      <li>
-        <a id="btnCancha1" href="#" class="list-button item-link">Cancha 1</a>
-      </li>
-      <li>
-        <a id="btnCancha2" href="#" class="list-button item-link">Cancha 2</a>
-      </li>
-      <li>
-        <a id="btnCancha3" href="#" class="list-button item-link">Cancha 3</a>
-      </li>
-      <li>
-        <a id="btnCancha4" href="#" class="list-button item-link">Cancha 4</a>
-      </li>
-      <li>
-        <a id="btnCancha5" href="#" class="list-button item-link">Cancha 5</a>
-      </li>
-      <a id="btnCancha..." href="#" class="list-button item-link">...</a>
-    </li>
-      </br>
-      </br>
-      </br>
-      </br>
-      </br>
-    </li>
-    <a id="btnCanchaN" href="#" class="list-button item-link">CanchaN</a>
-  </li>
-    </ul>
-  </div>
-</div>
+                <div class="list-block list-block-search searchbar-found">
+                  <ul id="canchas">
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title">Tocala</div>
+                        <p class="buttons-row">
+                          <a href="#" id="btn1" class="button">Ir</a>
+                        </p>
+                      </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
             </div>
           </div>

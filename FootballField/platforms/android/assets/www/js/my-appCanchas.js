@@ -10,6 +10,7 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+var cont = 0;
 
 $$(document).on('deviceready',initapp);
 
@@ -17,24 +18,46 @@ function initapp(){
   console.log("dispositivo listo!!!");
   $$('#btnPantallaPrincipal').on('click', abrirPantallaPrincipal);
   $$('#btnCanchas').on('click', abrirCanchas);
-  $$('#btnPerfil').on('click', abrirPerfil);
   $$('#btnAjustes').on('click', abrirAjustes);
   $$('#btnAyuda').on('click', abrirAyuda);
   $$('#btnInfo').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
-  $$('#btnCancha1').on('click', abrirCancha);
+  $$('#btn1').on('click', abrirCancha);
+  $$('#agregar').on('click', agregarCancha);
+  $$('#btn2').on('click', abrirCanchaPrueba);
   document.addEventListener("backbutton", volverPPrincipal, false);
 }
 
 function volverPPrincipal(e){
  document.location="pPrincipal.html"
 }
+//usar for para agregar canchas cada vez que se ingrese a la pagina canchas
+function agregarCancha(){
+    text_html ='<li class="item-content">';
+    text_html +='<div class="item-inner">';
+    text_html +='<div class="item-title">Cancha '+cont+'</div>';
+    text_html +='<p class="buttons-row">';
+    text_html +='<a href="#" id="btn'+cont+'" class="button">Ir</a>';
+    text_html +='</p>';
+    text_html +='</div>';
+    text_html +='</li>';
+    cont++;
+
+    $$('#canchas').append(text_html);
+}
 
 function abrirCancha() {
   myApp.showPreloader("Abriendo Cancha");
   document.location="cancha.html"
 }
+
+function abrirCanchaPrueba() {
+  console.log("abrio la funcion");
+  myApp.showPreloader("Abriendo Cancha");
+  document.location="cancha.html"
+}
+
 function cerrarMenu() {
   myApp.closePanel("left");
 }
@@ -46,11 +69,6 @@ function abrirPantallaPrincipal() {
 
 function abrirCanchas() {
   myApp.closePanel("left");
-}
-
-function abrirPerfil() {
-  myApp.showPreloader("Abriendo Perfil");
-  document.location="perfil.html"
 }
 
 function abrirAjustes() {
@@ -72,5 +90,5 @@ function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
   localStorage.clear();
-  document.location="index.html"
+  document.location="login.html"
 }
