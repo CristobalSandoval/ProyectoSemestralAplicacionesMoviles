@@ -22,6 +22,12 @@
       }
     </style>
 
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -66,14 +72,14 @@
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
-            <div style="background-color:green;" class="page-content">
+            <div id="panel" class="page-content">
               <!-- Cuerpo app-->
               <div class="content-block">
                 <center>
                   <p><h1><FONT COLOR="black"><b>Nombre de la Cancha </b> <span id="NombreCancha"></span></FONT></h3></p>
                 </br>
                 <div class="content-block inset">
-                  <div class="content-block-inner">
+                  <div class="content-block-inner" style="background-color:rgba(255, 255, 255, 0.5);">
                     <p><h3><b><FONT COLOR="black">Información</FONT></b></h3></p>
                     <p ALIGN="justify"><b>Valor por hora: </b> <span id="ValorHora"></span></p>
                     <p ALIGN="justify"><b>Horario: </b> <span id="Horario"></span></p>
@@ -84,7 +90,7 @@
                 </div>
 
                   <div class="content-block inset">
-                    <div class="content-block-inner">
+                    <div class="content-block-inner" style="background-color:rgba(255, 255, 255, 0.5);">
                       <b><h3><FONT COLOR="black">Descripción</FONT></h3></b>
                       <p ALIGN="justify"><FONT COLOR="black"></br> Nuestro centro recreativo cuenta con n canchas, m cuentan con cesped sintetico
                         y el resto con cesped natural. J canchas tienen la medida Q*W mts2 y una mide R*T mt 2. Además, en cuenta
@@ -92,7 +98,7 @@
                     </div>
                   </div>
                   <div class="content-block inset">
-                    <div class="content-block-inner">
+                    <div class="content-block-inner" style="background-color:rgba(255, 255, 255, 0.5);">
                       <b><h3><FONT COLOR="black">Galeria</FONT></h3></b>
                       <div class="row">
                         <div class="col-25">
@@ -123,13 +129,14 @@
                     </div>
                   </div>
                   <div class="content-block inset">
-                    <div class="content-block-inner">
+                    <div class="content-block-inner" style="background-color:rgba(255, 255, 255, 0.5);">
                       <b><h3><FONT COLOR="black">Ubicación</FONT></h3></b>
                       <div id="map"></div>
                     </div>
                   </div>
-                  <a style="background-color:white; border-color:black;" id="disponibilidad" href="#" class="button"><FONT COLOR="black">VER DISPONIBILIDAD</FONT></a>
-
+                  <div class="content-block inset">
+                    <a style="background-color:white; border-color:black;" id="disponibilidad" href="#" class="button"><FONT COLOR="black">VER DISPONIBILIDAD</FONT></a>
+                  </div>
                 </center>
               </div>
             </div>

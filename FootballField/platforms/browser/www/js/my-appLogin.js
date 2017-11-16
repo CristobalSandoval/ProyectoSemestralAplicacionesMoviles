@@ -18,17 +18,18 @@ function initapp(){
   $$("#iniciar").on("click", click_btn);
   $$("#registrar").on("click", click_regis);
   $$("#uiDueño").on("click", click_ui);
-  document.addEventListener("backbutton", onBackKeyDown, false);
+  //document.addEventListener("backbutton", onBackKeyDown, false);
+  document.addEventListener("backbutton", volverPPrincipal, false);
 }
 
 //Solo de prueba
 function click_ui() {
-  document.location = "pPrincipal2.html";
+  document.location = "index.html";
 }
 
 
 //Solo de prueba
-
+/*
 function onBackKeyDown(){
  navigator.notification.confirm("Desea salir de FootballField?", cerrarAPP,"ADVERTENCIA!", "Si,No");
 }
@@ -39,7 +40,10 @@ function cerrarAPP(e){
     return;
   }
 }
-
+*/
+function volverPPrincipal(e){
+ document.location="index.html"
+}
 
 function miFunc() {
   if(localStorage.getItem("usr") != null || localStorage.getItem("pss" != null)){
@@ -57,7 +61,7 @@ function miFunc() {
       success: function(data){
         myApp.hidePreloader();
         if(data.resp){
-          document.location = "pPrincipal.html";
+          document.location = "pPrincipal2.html";
           }else{
             myApp.alert(data.info,"Advertencia");
           }
@@ -91,7 +95,7 @@ function click_btn(){
       success: function(data){
         myApp.hidePreloader();
         if(data.resp){
-          document.location = "pPrincipal.html";
+          document.location = "pPrincipal2.html";
           localStorage.setItem("usr", $$('#username').val());
           localStorage.setItem("pss", $$('#password').val());
           }else{
@@ -111,5 +115,5 @@ function click_btn(){
 
 function click_regis() {
   myApp.showPreloader("Cargando");
-  document.location="signin0.html"
+  document.location="signinD.html"
 }

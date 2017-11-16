@@ -13,10 +13,19 @@
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
+    <!-- -->
+
     <!-- Views-->
     <div class="views">
       <!-- Your main view, should have "view-main" class-->
@@ -44,11 +53,11 @@
             <div class="login-screen modal-in">
               <div class="view">
                 <div class="page">
-                  <div style="background-color:darkgreen;"class="page-content login-screen-content">
-                    <div class="login-screen-title">Iniciar Sesión</div>
+                  <div id="panel" class="page-content login-screen-content">
+                    <div class="login-screen-title"><FONT COLOR="white"><b>Iniciar Sesión</b></FONT></div>
                     <form>
                       <div class="list-block">
-                        <ul>
+                        <ul style="background-color:rgba(255, 255, 255, 0.5);">
                           <li class="item-content">
                             <div class="item-media"><i class="icon f7-icons">person</i></div>
                             <div class="item-inner">
@@ -71,18 +80,21 @@
                       </div>
                       <div class="list-block">
                         <ul>
-                          <div class="content-block">
+                          <div class="content-block inset">
                             <div class="row">
                               <div class="col-50">
-                                <li><a style="background-color:white; border-color:black;" id="iniciar" href="#" class="button"><FONT COLOR="black">Inciar Sesión</FONT></a></li>
+                                <a style="background-color:white; border-color:black;" id="iniciar" href="#" class="button"><FONT COLOR="black">Inciar Sesión</FONT></a>
                               </div>
                               <div class="col-50">
-                                <li><a style="background-color:white; border-color:black;" id="registrar" href="#" class="button"><FONT COLOR="black">Registrarse</FONT></a></li>
+                                <a style="background-color:white; border-color:black;" id="registrar" href="#" class="button"><FONT COLOR="black">Registrarse</FONT></a>
                               </div>
                             </div>
                           <p ALIGN="center"><FONT COLOR="black">SI AUN NO TIENES TU CUENTA <b>REGISTRATE</b> ES GRATIS</FONT></p>
                         </div>
-                        <li><a style="background-color:white; border-color:black;" id="uiDueño" href="#" class="button"><FONT COLOR="black">Probar UI Dueño</FONT></a></li>
+                        <div class="content-block inset">
+                          <a style="background-color:white; border-color:black;" id="uiDueño" href="#" class="button"><FONT COLOR="black">Volver Al Menu Principal</FONT></a>
+                        </div>
+
                         </ul>
                       </div>
                     </form>

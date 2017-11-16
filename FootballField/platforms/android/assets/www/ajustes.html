@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -29,12 +36,18 @@
         </div>
         <p><b>Otras Opciones</b></p>
         <div class="content-block">
+          <!--
           <p><a href="#" id="btnAjustes"class="button">Ajustes</a></p>
+        -->
           <p><a href="#" id="btnAyuda" class="button">Ayuda</a></p>
           <p><a href="#" id="btnInfo" class="button">Información de la App</a></p>
         </div>
+        <p><b>Cuenta</b></p>
+        <div class="content-block">
+          <p><a href="#" id="btnLogin" class="button">Log In</a></p>
+          <p><a href="#" id="btnSign" class="button">Sign In</a></p>
+        </div>
         <p><a href="#" id="btnCerrarMenu" class="button">Cerrar Menú</a></p>
-        <p><a href="#" id="btnCerrarSesion" class="button">Cerrar Sesión</a></p>
       </div>
     </div>
 
@@ -57,9 +70,16 @@
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
-            <div style="background-color:green;" class="page-content">
+            <div id="panel" class="page-content">
               <!-- Cuerpo app-->
-              <div class="list-block">
+              <div class="content-block inset">
+
+                <div class="row">
+                  <div class="col-100">
+                    <a style="background-color:white; border-color:black;" id="btnCambiarContraseña" href="#" class="button"><FONT COLOR="black">CAMBIAR CONTRASEÑA</FONT></a>
+                  </div>
+                </div>
+                <!--
                 <ul>
                   <li>
                     <div class="item-content">
@@ -76,10 +96,13 @@
                     </div>
                   </li>
                 </ul>
+              -->
               </div>
               <div class="content-block">
-                <li><a style="background-color:white; border-color:black;" id="btnCambiarContraseña" href="#" class="button"><FONT COLOR="black">CAMBIAR CONTRASEÑA</FONT></a></li>
+
+                <!--
                 <li><a style="background-color:white; border-color:black;" id="btnBorrarCta" href="#" class="button"><FONT COLOR="black">BORRAR CUENTA</FONT></a></li>
+              -->
               </div>
             </div>
           </div>

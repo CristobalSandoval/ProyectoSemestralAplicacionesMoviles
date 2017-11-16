@@ -17,17 +17,17 @@ function initapp(){
   console.log("dispositivo listo!!!");
 
   //$$("#registrar").on("click", click_regis);
-  $$("#volver").on("click", volverALogIn);
+  $$("#volver").on("click", volverARes);
   document.addEventListener("backbutton", volver, false);
 }
 
 function volver(e){
- document.location="signin0.html"
+ document.location="VReserva.html"
 }
 
 //solo por prueba
-function volverALogIn() {
-  document.location="login.html"
+function volverARes() {
+  document.location="VReserva.html"
 }
 
 /*

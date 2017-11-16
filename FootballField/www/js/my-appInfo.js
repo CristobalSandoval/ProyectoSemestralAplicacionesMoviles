@@ -17,16 +17,17 @@ function initapp(){
   console.log("dispositivo listo!!!");
   $$('#btnPantallaPrincipal').on('click', abrirPantallaPrincipal);
   $$('#btnCanchas').on('click', abrirCanchas);
-  $$('#btnAjustes').on('click', abrirAjustes);
+  //$$('#btnAjustes').on('click', abrirAjustes);
   $$('#btnAyuda').on('click', abrirAyuda);
   $$('#btnInfo').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
-  $$('#btnCerrarSesion').on('click', cerrarSesion);
+  $$('#btnLogin').on('click', Abrirlogin);
+  $$('#btnSign').on('click', AbrirSign);
   document.addEventListener("backbutton", volverPPrincipal, false);
 }
 
 function volverPPrincipal(e){
- document.location="pPrincipal.html"
+ document.location="index.html"
 }
 
 function cerrarMenu() {
@@ -35,19 +36,19 @@ function cerrarMenu() {
 
 function abrirPantallaPrincipal() {
   myApp.showPreloader("Abriendo Pantalla Principal");
-  document.location="pPrincipal.html"
+  document.location="index.html"
 }
 
 function abrirCanchas() {
   myApp.showPreloader("Abriendo Canchas");
   document.location="canchas.html"
 }
-
+/*
 function abrirAjustes() {
   myApp.showPreloader("Abriendo Ajustes");
   document.location="ajustes.html"
 }
-
+*/
 function abrirAyuda() {
   myApp.showPreloader("Abriendo Ayuda");
   document.location="ayuda.html"
@@ -57,9 +58,20 @@ function abrirInfo() {
   myApp.closePanel("left");
 }
 
+function Abrirlogin() {
+  myApp.showPreloader("Abriendo Log In");
+  document.location="login.html"
+}
+
+function AbrirSign() {
+  myApp.showPreloader("Abriendo Sign In");
+  document.location="signinD.html"
+}
+/*
 function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
   localStorage.clear();
-  document.location="login.html"
+  document.location="index.html"
 }
+*/

@@ -22,7 +22,7 @@ function initapp(){
 }
 
 function volver(e){
- document.location="signin0.html"
+ document.location="login.html"
 }
 
 //solo por prueba

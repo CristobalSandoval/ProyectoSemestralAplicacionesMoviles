@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Sign In</title>
+    <title>Reserva</title>
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -25,7 +32,7 @@
         <div style="background-color:black;" class="navbar">
           <div class="navbar-inner">
             <!-- We have home navbar without left link-->
-            <div class="center sliding"><FONT COLOR="white">Sign In Usuario</FONT></div>
+            <div class="center sliding"><FONT COLOR="white">Reserva</FONT></div>
             <div class="right">
             </div>
           </div>
@@ -35,16 +42,16 @@
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
-            <div style="background-color:darkgreen;" class="page-content">
+            <div id="panel" class="page-content">
             <!-- Cuerpo app-->
-            <div class="content.block">
+            <div class="content-block">
 
             <div Align="center" class="content-block-title"><FONT COLOR="black"><b>Campos de Información</b></FONT></div>
-            <div class="list-block" >
-              <ul style="background-color:darkgreen;">
+            <div class="list-block inset">
+              <ul style="background-color:rgba(255, 255, 255, 0.5);">
                 <!-- Nombre -->
                 <li>
-                  <div style="background-color:darkgreen;" class="item-content">
+                  <div class="item-content">
                     <div class="item-media"><i class="icon f7-icons">person</i></div>
                     <div class="item-inner">
                       <div class="item-title label">Nombre</div>
@@ -56,7 +63,7 @@
                 </li>
                 <!-- Apellido -->
                 <li>
-                  <div style="background-color:darkgreen;" class="item-content">
+                  <div class="item-content">
                     <div class="item-media"><i class="icon f7-icons">persons</i></div>
                     <div class="item-inner">
                       <div class="item-title label">Apellido</div>
@@ -68,7 +75,7 @@
                 </li>
                 <!-- E-mail -->
                   <li>
-                    <div style="background-color:darkgreen;" class="item-content">
+                    <div class="item-content">
                       <div class="item-media"><i class="icon f7-icons">email</i></div>
                       <div class="item-inner">
                         <div class="item-title label">E-mail</div>
@@ -80,7 +87,7 @@
                   </li>
                   <!-- RUT -->
                   <li>
-                    <div style="background-color:darkgreen;" class="item-content">
+                    <div class="item-content">
                       <div class="item-media"><i class="icon f7-icons">tags</i></div>
                       <div class="item-inner">
                         <div class="item-title label">Rut</div>
@@ -90,29 +97,54 @@
                       </div>
                     </div>
                   </li>
-                  <!-- Contraseña -->
+                  <!-- Dia -->
                     <li>
-                      <div style="background-color:darkgreen;" class="item-content">
-                        <div class="item-media"><i class="icon f7-icons">lock</i></div>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon f7-icons">calendar</i></div>
                         <div class="item-inner">
-                          <div class="item-title label">Contraseña</div>
+                          <div class="item-title label">Día de Reserva</div>
                           <div class="form-control">
-                            <input type="password" id="pass" placeholder="Ingrese una contraseña">
+                            <input type="date" id="dia">
                           </div>
                         </div>
                       </div>
                     </li>
-                    <div style="background-color:darkgreen;" class="content-block">
-                      <div class="row">
-                        <div class="col-50">
-                          <li><a style="background-color:white; border-color:black;" id="registrar" href="#" class="button"><FONT COLOR="black">Registrarse</FONT></a></li>
-                        </div>
-                        <div class="col-50">
-                          <li><a style="background-color:white; border-color:black;" id="volver" href="#" class="button"><FONT COLOR="black">Volver a LogIn</FONT></a></li>
+                    <!-- Hora Inicio-->
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon f7-icons">time</i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Hora Inicio</div>
+                          <div class="form-control">
+                            <input type="number" id="horaI" placeholder="Ingrese Hora">
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </li>
+                    <!-- Hora Fin-->
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon f7-icons">time</i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Hora Fin</div>
+                          <div class="form-control">
+                            <input type="number" id="horaF" placeholder="Ingrese Hora">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- -->
               </ul>
+            </div>
+            <div class="content-block inset">
+              <div class="row">
+                <div class="col-50">
+                  <a style="background-color:white; border-color:black;" id="reservar" href="#" class="button"><FONT COLOR="black">Reservar</FONT></a>
+                </div>
+                <div class="col-50">
+                  <a style="background-color:white; border-color:black;" id="volver" href="#" class="button"><FONT COLOR="black">Volver</FONT></a>
+                </div>
+              </div>
             </div>
             </div>
             </div>
@@ -124,6 +156,6 @@
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-appSigninU.js"></script>
+    <script type="text/javascript" src="js/my-appDReserva.js"></script>
   </body>
 </html>

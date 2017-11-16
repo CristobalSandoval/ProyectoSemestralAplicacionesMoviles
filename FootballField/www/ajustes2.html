@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -57,29 +64,15 @@
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
-            <div style="background-color:green;" class="page-content">
+            <div id="panel" class="page-content">
               <!-- Cuerpo app-->
-              <div class="list-block">
-                <ul>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon f7-icons">bell_fill</i></div>
-                      <div class="item-inner">
-                        <div class="item-title label">Notificaciones</div>
-                        <div Align="right" class="item-input">
-                          <label id="switchNot" class="label-switch">
-                            <input type="checkbox">
-                            <div class="checkbox"></div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content-block">
-                <li><a style="background-color:white; border-color:black;" id="btnCambiarContraseña" href="#" class="button"><FONT COLOR="black">CAMBIAR CONTRASEÑA</FONT></a></li>
-                <li><a style="background-color:white; border-color:black;" id="btnBorrarCta" href="#" class="button"><FONT COLOR="black">BORRAR CUENTA</FONT></a></li>
+              <div class="content-block inset">
+                <div class="row">
+                  <div class="col-100">
+                    <a style="background-color:white; border-color:black;" id="btnCambiarContraseña" href="#" class="button"><FONT COLOR="black">CAMBIAR CONTRASEÑA</FONT></a>
+                  </div>
+                </div>
+                <!--
               </div>
             </div>
           </div>

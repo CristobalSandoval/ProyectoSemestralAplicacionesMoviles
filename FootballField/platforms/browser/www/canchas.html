@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -29,12 +36,18 @@
         </div>
         <p><b>Otras Opciones</b></p>
         <div class="content-block">
+          <!--
           <p><a href="#" id="btnAjustes"class="button">Ajustes</a></p>
+        -->
           <p><a href="#" id="btnAyuda" class="button">Ayuda</a></p>
           <p><a href="#" id="btnInfo" class="button">Información de la App</a></p>
         </div>
+        <p><b>Cuenta</b></p>
+        <div class="content-block">
+          <p><a href="#" id="btnLogin" class="button">Log In</a></p>
+          <p><a href="#" id="btnSign" class="button">Sign In</a></p>
+        </div>
         <p><a href="#" id="btnCerrarMenu" class="button">Cerrar Menú</a></p>
-        <p><a href="#" id="btnCerrarSesion" class="button">Cerrar Sesión</a></p>
       </div>
     </div>
 
@@ -56,7 +69,7 @@
         <div class="pages navbar-through toolbar-through">
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
-            <form class="searchbar searchbar-init" data-search-list=".list-block-search" data-search-in=".item-title" data-found=".searchbar-found" data-not-found=".searchbar-not-found">
+            <form style="background-color:rgba(255, 255, 255, 0.0);" class="searchbar searchbar-init" data-search-list=".list-block-search" data-search-in=".item-title" data-found=".searchbar-found" data-not-found=".searchbar-not-found">
               <div class="searchbar-input">
             <input type="search" placeholder="Buscar">
             <a href="#" class="searchbar-clear"></a>
@@ -66,22 +79,24 @@
 
     <div class="searchbar-overlay"></div>
             <!-- Scrollable page content-->
-            <div style="background-color:black;" class="page-content">
+            <div id="panel" class="page-content">
               <div class="content-block searchbar-not-found">
                 <!-- Añadir mensaje de no encontrado -->
                 </div>
-              </br>s
-              <a id="agregar" class="button">Agregar Cancha</a>
+              </br>
+              <div class="content-block inset">
+                <a style="background-color:white; border-color:black;" id="agregar" href="#" class="button"><FONT COLOR="black">Agregar</FONT></a>
+              </div>
             </br>
             </br>
-              <div class="card">
+              <div class="card" style="background-color:rgba(255, 255, 255, 0.5);">
                 <div class="list-block list-block-search searchbar-found">
                   <ul id="canchas">
                     <li class="item-content">
                       <div class="item-inner">
                         <div class="item-title">Tocala</div>
                         <p class="buttons-row">
-                          <a href="#" id="btn1" class="button">Ir</a>
+                          <a style="background-color:white; border-color:black;" href="#" id="btn1" class="button"><FONT COLOR="black">Ir</FONT></a>
                         </p>
                       </div>
                   </ul>

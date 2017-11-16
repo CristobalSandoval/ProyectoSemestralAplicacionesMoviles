@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -56,14 +63,15 @@
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
-            <div style="background-color:green;" class="page-content">
+            <div id="panel" class="page-content">
               <!-- Cuerpo de la app -->
               <div class="content-block">
                 <div ALIGN="center"><FONT COLOR="white"><p><h1><b>INGRESAR CANCHA</b></h1></p></FONT></div>
                 <!-- -->
 
-                <div class="list-block">
-                  <ul>
+                <div class="list-block inset">
+                  <ul style="background-color:rgba(255, 255, 255, 0.5);">
+
                     <li class="item-content">
                       <div class="item-media"><i class="icon f7-icons">compose</i></div>
                       <div class="item-inner">
@@ -84,22 +92,56 @@
                       </div>
                     </li>
 
+                    <!-- Solo Prueba-->
+
                     <li class="item-content">
-                      <div class="item-media"><i class="icon f7-icons">calendar</i></div>
+                      <div class="item-media"><i class="icon f7-icons">compass</i></div>
                       <div class="item-inner">
-                        <div class="item-title label">Hora de Apertura</div>
+                        <div class="item-title label">Longitud</div>
                         <div class="item-input">
-                          <input type="text" id="h_a" placeholder="Ingrese Una Hora">
+                          <input type="text" id="longitud" placeholder="Ingrese Una Descripción">
                         </div>
                       </div>
                     </li>
 
                     <li class="item-content">
-                      <div class="item-media"><i class="icon f7-icons">calendar</i></div>
+                      <div class="item-media"><i class="icon f7-icons">compass</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Latitud</div>
+                        <div class="item-input">
+                          <input type="text" id="latitud" placeholder="Ingrese Una Descripción">
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Solo Prueba-->
+
+                    <li class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">time</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Hora de Apertura</div>
+                        <div class="item-input">
+                          <input type="text" id="hora_a" placeholder="Ingrese Una Hora">
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">time</i></div>
                       <div class="item-inner">
                         <div class="item-title label">Hora de Clausura</div>
                         <div class="item-input">
-                          <input type="text" id="h_c" placeholder="Ingrese Una Hora">
+                          <input type="text" id="hora_c" placeholder="Ingrese Una Hora">
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">money_dollar</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Valor Hora</div>
+                        <div class="item-input">
+                          <input type="text" id="valor_hora" placeholder="Ingrese Una Descripción">
                         </div>
                       </div>
                     </li>
@@ -119,10 +161,8 @@
 
                 <!-- -->
 
-                <div class="list-block">
-                  <ul>
-                    <div class="content-block">
-                      <br/>
+                <div class="list-block inset">
+                  <ul style="background-color:rgba(255, 255, 255, 0.0);">
                       <div class="row">
                         <div class="col-50">
                           <li><a style="background-color:white; border-color:black;" id="Enviar" href="#" class="button"><FONT COLOR="black">Enviar Datos</FONT></a></li>
@@ -131,8 +171,6 @@
                           <li><a style="background-color:white; border-color:black;" id="registrar" href="#" class="button"><FONT COLOR="black">Borrar Datos</FONT></a></li>
                         </div>
                       </div>
-                      <br/>
-                  </div>
                   </ul>
                 </div>
 

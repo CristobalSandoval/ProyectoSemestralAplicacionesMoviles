@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+
+    <style>
+      #panel{
+        background-image: url('aa.jpg');
+      }
+    </style>
+
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -29,12 +36,18 @@
         </div>
         <p><b>Otras Opciones</b></p>
         <div class="content-block">
+          <!--
           <p><a href="#" id="btnAjustes"class="button">Ajustes</a></p>
+        -->
           <p><a href="#" id="btnAyuda" class="button">Ayuda</a></p>
           <p><a href="#" id="btnInfo" class="button">Información de la App</a></p>
         </div>
+        <p><b>Cuenta</b></p>
+        <div class="content-block">
+          <p><a href="#" id="btnLogin" class="button">Log In</a></p>
+          <p><a href="#" id="btnSign" class="button">Sign In</a></p>
+        </div>
         <p><a href="#" id="btnCerrarMenu" class="button">Cerrar Menú</a></p>
-        <p><a href="#" id="btnCerrarSesion" class="button">Cerrar Sesión</a></p>
       </div>
     </div>
 
@@ -58,10 +71,10 @@
           <div data-page="index" class="page">
 
             <!-- Scrollable page content-->
-            <div style="background-color:green;" class="page-content">
+            <div id="panel" class="page-content">
               <!-- Cuerpo app-->
 	          <div class="content-block">
-			  <div ALIGN="center"><FONT COLOR="black"><p><h1><b>En que le podemos ayudar</b></h6></p></FONT></div>
+			  <div ALIGN="center"><FONT COLOR="white"><p><h1><b>En que le podemos ayudar</b></h6></p></FONT></div>
 
 			  <li><a style="background-color:white; border-color:black;" id="ReservarCanchas" href="#" class="button"><FONT COLOR="black">Reservar canchas</FONT></a></li>
 			  <li><a style="background-color:white; border-color:black;" id="EliminarReserva" href="#" class="button"><FONT COLOR="black">Eliminar reserva</FONT></a></li>

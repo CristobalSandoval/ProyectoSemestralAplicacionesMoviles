@@ -17,11 +17,12 @@ function initapp(){
   console.log("dispositivo listo!!!");
   $$('#btnPantallaPrincipal').on('click', abrirPantallaPrincipal);
   $$('#btnCanchas').on('click', abrirCanchas);
-  $$('#btnAjustes').on('click', abrirAjustes);
+  //$$('#btnAjustes').on('click', abrirAjustes);
   $$('#btnAyuda').on('click', abrirAyuda);
   $$('#btnInfo').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
-  $$('#btnCerrarSesion').on('click', cerrarSesion);
+  $$('#btnLogin').on('click', Abrirlogin);
+  $$('#btnSign').on('click', AbrirSign);
   document.addEventListener("backbutton", onBackKeyDown, false);
 }
 
@@ -65,9 +66,21 @@ function abrirInfo() {
   document.location="info.html"
 }
 
+function Abrirlogin() {
+  myApp.showPreloader("Abriendo Log In");
+  document.location="login.html"
+}
+
+function AbrirSign() {
+  myApp.showPreloader("Abriendo Sign In");
+  document.location="signinD.html"
+}
+
+/*
 function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
   localStorage.clear();
   document.location="login.html"
 }
+*/
