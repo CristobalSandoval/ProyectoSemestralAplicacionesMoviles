@@ -40,7 +40,7 @@ function abrirPantallaPrincipal() {
 
 function abrirMiCancha() {
   myApp.showPreloader("Abriendo Canchas");
-  document.location="canchaDueño.html"
+  document.location="canchaDueno.html"
 }
 
 function abrirAjustes() {

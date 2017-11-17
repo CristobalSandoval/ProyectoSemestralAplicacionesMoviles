@@ -23,7 +23,12 @@ function initapp(){
   $$('#btnInfo2').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
+  $$('#btnCambiarContraseña').on('click', cambiarPass);
   document.addEventListener("backbutton", volverPPrincipal, false);
+}
+
+function cambiarPass() {
+  console.log("cambiar pass");
 }
 
 function volverPPrincipal(e){
@@ -45,7 +50,7 @@ function abrirPantallaPrincipal() {
 
 function abrirMiCanchas() {
   myApp.showPreloader("Abriendo Canchas");
-  document.location="canchaDueño.html"
+  document.location="canchaDueno.html"
 }
 
 

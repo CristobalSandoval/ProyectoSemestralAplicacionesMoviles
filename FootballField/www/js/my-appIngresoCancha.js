@@ -22,16 +22,29 @@ function initapp(){
   $$('#btnInfo2').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
+  $$('#borrar').on('click', borrarDatos);
   document.addEventListener("backbutton", onBackKeyDown, false);
 }
 
+function borrarDatos() {
+  $$('#nombre').val(value = "");
+  $$('#direccion').val(value = "");
+  $$('#longitud').val(value = "");
+  $$('#latitud').val(value = "");
+  $$('#hora_a').val(value = "");
+  $$('#hora_c').val(value = "");
+  $$('#valor_hora').val(value = "");
+  $$('#descripcion').val(value = "");
+}
+
+
 function onBackKeyDown(){
- navigator.notification.confirm("DESEA SALIR DE FOOTBALLFIELD?", cerrarAPP,"ADVERTENCIA", "Si,No");
+ navigator.notification.confirm("DESEA SALIR DEL INGRESO DE CANCHAS?", cerrarAPP,"ADVERTENCIA", "Si,No");
 }
 
 function cerrarAPP(e){
   if(e==1){
-   navigator.app.exitApp();
+   document.location="pPrincipal2.html"
   }else{
     return;
   }
@@ -47,7 +60,7 @@ function abrirPantallaPrincipal2() {
 
 function abrirMiCancha() {
   myApp.showPreloader("Abriendo Canchas");
-  document.location="canchaDueño.html"
+  document.location="canchaDueno.html"
 }
 
 function abrirAjustes() {
@@ -69,5 +82,5 @@ function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
   localStorage.clear();
-  document.location="login.html"
+  document.location="index.html"
 }

@@ -40,7 +40,7 @@ function abrirPantallaPrincipal() {
 
 function abrirMiCanchas() {
   myApp.showPreloader("Abriendo Canchas");
-  document.location="canchaDueño.html"
+  document.location="canchaDueno.html"
 }
 
 function abrirAjustes() {
@@ -61,5 +61,5 @@ function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
   localStorage.clear();
-  document.location="login.html"
+  document.location="index.html"
 }

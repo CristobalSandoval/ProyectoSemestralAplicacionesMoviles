@@ -17,7 +17,7 @@ $$(document).on('deviceready',initapp);
 function initapp(){
   console.log("dispositivo listo!!!");
   $$('#btnPantallaPrincipal').on('click', abrirPantallaPrincipal2);
-  $$('#btnMiCancha').on('click', abrirMiCanchas);
+  $$('#btnMiCancha').on('click', abrirMiCancha);
   $$('#btnIngCanchas').on('click', ingresarCanchas);
   $$('#btnAjustes2').on('click', abrirAjustes);
   $$('#btnAyuda2').on('click', abrirAyuda);
@@ -57,9 +57,9 @@ function abrirPantallaPrincipal2() {
   myApp.closePanel("left");
 }
 
-function abrirMiCanchas() {
+function abrirMiCancha() {
   myApp.showPreloader("Abriendo Mi Canchas");
-  document.location="canchaDueño.html"
+  document.location="canchaDueno.html"
 }
 
 function abrirAjustes() {
@@ -80,5 +80,5 @@ function abrirInfo() {
 function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   localStorage.clear();
-  document.location="login.html"
+  document.location="index.html"
 }

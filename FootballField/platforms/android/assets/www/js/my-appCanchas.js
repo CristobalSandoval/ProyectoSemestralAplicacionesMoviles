@@ -31,7 +31,7 @@ function initapp(){
 }
 
 function volverPPrincipal(e){
- document.location="pPrincipal.html"
+ document.location="index.html"
 }
 //usar for para agregar canchas cada vez que se ingrese a la pagina canchas
 function agregarCancha(){
