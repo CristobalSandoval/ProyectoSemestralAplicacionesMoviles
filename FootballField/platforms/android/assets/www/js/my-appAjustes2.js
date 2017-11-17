@@ -35,6 +35,10 @@ function volverPPrincipal(e){
    document.location="pPrincipal2.html"
 }
 
+function cambiarPass() {
+  document.location="cPass2.html";
+}
+
 function ingresarCanchas() {
   document.location="ingresoCancha.html";
 }

@@ -35,6 +35,8 @@ function borrarDatos() {
   $$('#hora_c').val(value = "");
   $$('#valor_hora').val(value = "");
   $$('#descripcion').val(value = "");
+  $$('#rutD').val(value = "");
+  $$('#idCancha').val(value = "");
 }
 
 
