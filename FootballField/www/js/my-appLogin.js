@@ -51,11 +51,11 @@ function miFunc() {
     var usuario = localStorage.getItem("usr");
     var pass = localStorage.getItem("pss");
     $$.ajax({
-      url: 'http://servicioswebmoviles.hol.es/index.php/LOGIN_UBB',
+      url: 'https://cristobalsguttierrez.000webhostapp.com/login.php',
       method: 'POST',
       dataType: 'json',
       data: {
-        login: usuario,
+        rut: usuario,
         pass: pass
       },
       success: function(data){
@@ -63,7 +63,7 @@ function miFunc() {
         if(data.resp){
           document.location = "pPrincipal2.html";
           }else{
-            myApp.alert(data.info,"Advertencia");
+            myApp.alert(data.info,"Datos ingresados incorrectos");
           }
       },
       error: function(){
@@ -85,11 +85,11 @@ function click_btn(){
 
   if(usuario.length > 0 && pass.length > 0){
     $$.ajax({
-      url: 'http://servicioswebmoviles.hol.es/index.php/LOGIN_UBB',
+      url: 'https://cristobalsguttierrez.000webhostapp.com/login.php',
       method: 'POST',
       dataType: 'json',
       data: {
-        login: usuario,
+        rut: usuario,
         pass: pass
       },
       success: function(data){
@@ -99,7 +99,7 @@ function click_btn(){
           localStorage.setItem("usr", $$('#username').val());
           localStorage.setItem("pss", $$('#password').val());
           }else{
-            myApp.alert(data.info,"Advertencia");
+            myApp.alert(data.info,"Datos ingresados incorrectos");
           }
       },
       error: function(){
