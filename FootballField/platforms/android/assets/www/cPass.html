@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Ver Reserva</title>
+    <title>Cambiar Clave</title>
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
@@ -32,7 +32,7 @@
         <div style="background-color:black;" class="navbar">
           <div class="navbar-inner">
             <!-- We have home navbar without left link-->
-            <div class="center sliding"><FONT COLOR="white">Ver Reserva</FONT></div>
+            <div class="center sliding"><FONT COLOR="white">Cambiar Clave</FONT></div>
             <div class="right">
             </div>
           </div>
@@ -53,11 +53,23 @@
                   <!-- Dia -->
                     <li>
                       <div class="item-content">
-                        <div class="item-media"><i class="icon f7-icons">calendar</i></div>
+                        <div class="item-media"><i class="icon f7-icons">lock</i></div>
                         <div class="item-inner">
-                          <div class="item-title label">Día de Reserva</div>
+                          <div class="item-title label">Nueva Clave</div>
                           <div class="form-control">
-                            <input type="date" id="dia">
+                            <input type="password" id="newPass" placeholder="Ingrese Nueva Clave">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon f7-icons">lock</i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Repetir Clave</div>
+                          <div class="form-control">
+                            <input type="password" id="newPassR" placeholder="Repita La Clave">
                           </div>
                         </div>
                       </div>
@@ -70,15 +82,11 @@
             <div class="list-block inset">
             <ul style="background-color:rgba(255, 255, 255, 0.0);">
               <div class="row">
-                <div class="col-100">
-                  <li><a style="background-color:white; border-color:black;" id="ver" href="#" class="button"><FONT COLOR="black">Ver Dia</FONT></a></li>
-                  <br>
-                </div>
                 <div class="col-50">
                   <li><a style="background-color:white; border-color:black;" id="volver" href="#" class="button"><FONT COLOR="black">Volver</FONT></a></li>
                 </div>
                 <div class="col-50">
-                  <li><a style="background-color:white; border-color:black;" id="reserva" href="#" class="button"><FONT COLOR="black">Ir a Reserva</FONT></a></li>
+                  <li><a style="background-color:white; border-color:black;" id="cClave" href="#" class="button"><FONT COLOR="black">Cambiar Clave</FONT></a></li>
                 </div>
               </div>
             </ul>
@@ -94,6 +102,6 @@
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-appVReserva.js"></script>
+    <script type="text/javascript" src="js/my-appCPass.js"></script>
   </body>
 </html>

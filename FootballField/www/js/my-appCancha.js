@@ -46,7 +46,7 @@ function abrirAyuda() {
 
 function abrirPantallaPrincipal() {
   myApp.showPreloader("Abriendo Pantalla Principal");
-  document.location="index.html"
+  document.location="index2.html"
 }
 
 function abrirCanchas() {

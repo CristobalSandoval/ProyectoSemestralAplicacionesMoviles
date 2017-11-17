@@ -27,7 +27,7 @@ function initapp(){
 }
 
 function volverPPrincipal(e){
- document.location="index.html"
+ document.location="index2.html"
 }
 
 function cerrarMenu() {
@@ -36,7 +36,7 @@ function cerrarMenu() {
 
 function abrirPantallaPrincipal() {
   myApp.showPreloader("Abriendo Pantalla Principal");
-  document.location="index.html"
+  document.location="index2.html"
 }
 
 function abrirCanchas() {

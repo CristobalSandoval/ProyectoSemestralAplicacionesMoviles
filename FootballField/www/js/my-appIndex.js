@@ -19,8 +19,8 @@ function initapp(){
 
 function miFunc() {
   if(localStorage.getItem("usr") != null || localStorage.getItem("pss" != null)){
-    document.location = "index.html";
+    document.location = "pPrincipal2.html";
   }else {
-    document.location = "login.html";
+    document.location = "index2.html";
   }
 }

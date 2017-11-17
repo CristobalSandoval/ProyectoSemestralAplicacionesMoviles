@@ -61,5 +61,5 @@ function cerrarSesion() {
   myApp.showPreloader("Cerrando Sesión");
   //por ahora solo va al principio, despues hay que usar flag y token
   localStorage.clear();
-  document.location="login.html"
+  document.location="index.html"
 }

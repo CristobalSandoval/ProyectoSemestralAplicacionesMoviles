@@ -17,14 +17,14 @@ function initapp(){
 
   $$("#iniciar").on("click", click_btn);
   $$("#registrar").on("click", click_regis);
-  $$("#uiDueño").on("click", click_ui);
+  $$("#mPral").on("click", click_ui);
   //document.addEventListener("backbutton", onBackKeyDown, false);
   document.addEventListener("backbutton", volverPPrincipal, false);
 }
 
 //Solo de prueba
 function click_ui() {
-  document.location = "index.html";
+  document.location = "index2.html";
 }
 
 
