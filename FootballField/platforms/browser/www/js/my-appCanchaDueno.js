@@ -37,10 +37,10 @@ function mostrarDatos() {
 
   $$.ajax({
     url: 'https://cristobalsguttierrez.000webhostapp.com/miCancha.php',
-    method: 'POST',
+    method: 'GET',
     dataType: 'json',
     data: {
-      Rut: Rut
+    Rut: Rut
     },
     success: function(data){
       console.log("GG");
@@ -51,14 +51,15 @@ function mostrarDatos() {
         $$('#hClau').html(data.datos.hClausura);
         $$('#Direccion').html(data.datos.direccion);
         $$('#desc').html(data.datos.descripcion);
-        lo = data.datos.longitud;
-        la = data.datos.latitud;
+        lo = parseFloat(data.datos.longitud);
+        la = parseFloat(data.datos.latitud);
 
         }else{
-          myApp.alert(data.info,"Usted NO Tiene Una Cancha Registrada");
+          myApp.alert("","Usted NO Tiene Una Cancha Registrada");
         }
     },
     error: function(){
+      console.log(Rut);
       myApp.alert("El WS no ha respondido","Error");
     }
   });

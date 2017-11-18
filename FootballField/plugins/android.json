@@ -54,9 +54,6 @@
         },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "com.footfield.app"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.footfield.app"
         }
     },
     "dependent_plugins": {}
