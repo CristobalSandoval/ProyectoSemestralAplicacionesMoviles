@@ -5,8 +5,8 @@ var myApp = new Framework7();
 var $$ = Dom7;
 
 //mapa
-var la = -36.6346462;
-var lo = -72.0758378;
+var la;
+var lo;
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -29,6 +29,43 @@ function initapp(){
   document.addEventListener("backbutton", volverPP, false);
 }
 
+//--------------------
+
+function mostrarDatos() {
+  console.log("click");
+  var Rut = localStorage.getItem("usr");//= $$('#Rut').val();
+
+  $$.ajax({
+    url: 'https://cristobalsguttierrez.000webhostapp.com/miCancha.php',
+    method: 'POST',
+    dataType: 'json',
+    data: {
+      Rut: Rut
+    },
+    success: function(data){
+      console.log("GG");
+      if(data.resp){
+        $$('#NombreCancha').html(data.datos.nombre);
+        $$('#ValorHora').html(data.datos.valorHora);
+        $$('#hAper').html(data.datos.hApertura);
+        $$('#hClau').html(data.datos.hClausura);
+        $$('#Direccion').html(data.datos.direccion);
+        $$('#desc').html(data.datos.descripcion);
+        lo = data.datos.longitud;
+        la = data.datos.latitud;
+
+        }else{
+          myApp.alert(data.info,"Usted NO Tiene Una Cancha Registrada");
+        }
+    },
+    error: function(){
+      myApp.alert("El WS no ha respondido","Error");
+    }
+  });
+
+}
+
+//--------------------
 function volverPP(e){
    document.location="pPrincipal2.html"
 }

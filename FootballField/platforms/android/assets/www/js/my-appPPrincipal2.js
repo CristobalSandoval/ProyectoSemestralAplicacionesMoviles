@@ -41,8 +41,8 @@ function cerrarAPP(e){
 
 function ingresarCanchas() {
   if (contador == 0) {
-    document.location="ingresoCancha.html";
     contador++;
+    document.location="ingresoCancha.html";
   }else {
     myApp.showPreloader("No Puede Ingresar Mas Canchas");
     myApp.closePanel("left");

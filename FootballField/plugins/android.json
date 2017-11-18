@@ -43,9 +43,6 @@
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.footfield.app"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.footfield.app"
-        },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.footfield.app"
         },
@@ -56,6 +53,9 @@
             "PACKAGE_NAME": "com.footfield.app"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.footfield.app"
+        },
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.footfield.app"
         }
     },

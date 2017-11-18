@@ -23,6 +23,7 @@ function initapp(){
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
   $$('#borrar').on('click', borrarDatos);
+  $$('#Enviar').on('click', enviarDatos);
   document.addEventListener("backbutton", onBackKeyDown, false);
 }
 
@@ -38,6 +39,60 @@ function borrarDatos() {
   $$('#rutD').val(value = "");
   $$('#idCancha').val(value = "");
 }
+
+function enviarDatos() {
+  var Nom = $$('#nombre').val();
+  var Dir = $$('#direccion').val();
+  var Lon = $$('#longitud').val();
+  var Lat = $$('#latitud').val();
+  var HoA = $$('#hora_a').val();
+  var HoC = $$('#hora_c').val();
+  var Val = $$('#valor_hora').val();
+  var Des = $$('#descripcion').val();
+  var Run = localStorage.getItem("usr");//= $$('#rutD').val();
+  var IdC = $$('#idCancha').val();
+
+  myApp.showPreloader("Ingresando Datos");
+
+  if(Nom.length > 0 && Dir.length > 0 && Lon.length > 0 && Lat.length > 0 && HoA.length > 0 && HoC.length > 0 && Val.length > 0  && Des.length > 0 && Run.length > 0 && IdC.length > 0){
+    $$.ajax({
+      url: 'https://cristobalsguttierrez.000webhostapp.com/ingresarCancha.php',
+      method: 'POST',
+      dataType: 'json',
+      data: {
+        nombre: Nom,
+        descripcion: Des,
+        longitud: Lon,
+        latitud: Lat,
+        direccion: Dir,
+        hApertura: HoA,
+        hClausura: HoC,
+        valorHora: Val,
+        idCancha: IdC,
+        rutD: Run
+      },
+      success: function(data){
+        myApp.hidePreloader();
+        if(data.resp){
+          myApp.showPreloader("Ingreso Exitoso");
+          //myApp.alert("Registro Exitoso","Enhorabuena");
+          document.location = "pPrincipal2.html";
+          }else{
+            myApp.alert(data.info,"No Se Puedo Realizar El Ingreso");
+          }
+      },
+      error: function(){
+        myApp.hidePreloader();
+        myApp.alert("El WS no ha respondido","Error");
+      }
+    });
+
+  }else {
+    myApp.hidePreloader();
+    myApp.alert("","Debe rellenar todos los campos");
+  }
+}
+
 
 
 function onBackKeyDown(){
