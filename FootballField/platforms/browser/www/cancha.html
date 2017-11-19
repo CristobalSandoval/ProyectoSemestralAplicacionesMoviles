@@ -29,7 +29,7 @@
     </style>
 
   </head>
-  <body>
+  <body onload="mostrarDatos();">
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
@@ -82,25 +82,24 @@
               <!-- Cuerpo app-->
               <div class="content-block">
                 <center>
-                  <p><h1><FONT COLOR="black"><b>Nombre de la Cancha </b> <span id="NombreCancha"></span></FONT></h3></p>
-                </br>
+                  <p><h1><FONT COLOR="black"><b><span id="NombreCancha"></span></b></FONT></h3></p>
                 <div class="content-block inset">
                   <div class="content-block-inner" style="background-color:rgba(255, 255, 255, 0.5);">
                     <p><h3><b><FONT COLOR="black">Información</FONT></b></h3></p>
-                    <p ALIGN="justify"><b>Valor por hora: </b> <span id="ValorHora"></span></p>
-                    <p ALIGN="justify"><b>Horario: </b> <span id="Horario"></span></p>
-                    <p ALIGN="justify"><b>Dirección: </b> <span id="Dirección"></span></p>
-                    <p ALIGN="justify"><b>Ciudad: </b> <span id="Ciudad"></span></p>
+                    <p ALIGN="justify"><b>Valor por hora: </b><span id="ValorHora"></span></p>
+                    <p ALIGN="justify"><b>Hora Apertura: </b><span id="hAper"></span>:00</p>
+                    <p ALIGN="justify"><b>Hora Clausura: </b><span id="hClau"></span>:00</p>
+                    <p ALIGN="justify"><b>Dirección: </b> <span id="Direccion"></span></p>
+                    <!--
                     <p ALIGN="justify"><b>Celular: </b> <span id="Celular"></span></p>
+                  -->
                   </div>
                 </div>
 
                   <div class="content-block inset">
                     <div class="content-block-inner" style="background-color:rgba(255, 255, 255, 0.5);">
                       <b><h3><FONT COLOR="black">Descripción</FONT></h3></b>
-                      <p ALIGN="justify"><FONT COLOR="black"></br> Nuestro centro recreativo cuenta con n canchas, m cuentan con cesped sintetico
-                        y el resto con cesped natural. J canchas tienen la medida Q*W mts2 y una mide R*T mt 2. Además, en cuenta
-                        con servicios de higiene. <span id="NombreCancha"></span> </FONT></p>
+                      <p ALIGN="justify"><FONT COLOR="black"><span id="desc"></span> </FONT></p>
                     </div>
                   </div>
                   <div class="content-block inset">
@@ -141,7 +140,7 @@
                     </div>
                   </div>
                   <div class="content-block inset">
-                    <a style="background-color:white; border-color:black;" id="disponibilidad" href="#" class="button"><FONT COLOR="black">VER DISPONIBILIDAD</FONT></a>
+                    <a style="background-color:white; border-color:black;" id="disp" href="#" class="button"><FONT COLOR="black">VER DISPONIBILIDAD</FONT></a>
                   </div>
 
                 </center>

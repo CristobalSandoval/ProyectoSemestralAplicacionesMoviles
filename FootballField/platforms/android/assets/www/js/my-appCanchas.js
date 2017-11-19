@@ -25,15 +25,74 @@ function initapp(){
   $$('#btnLogin').on('click', Abrirlogin);
   $$('#btnSign').on('click', AbrirSign);
   $$('#btn1').on('click', abrirCancha);
-  $$('#agregar').on('click', agregarCancha);
+  //$$('#agregar').on('click', agregarCancha);
   $$('#btn2').on('click', abrirCanchaPrueba);
   document.addEventListener("backbutton", volverPPrincipal, false);
 }
+
+var nombreC;
+var idCancha;
+
+function cargarCancha(idCancha) {
+  localStorage.setItem("idCancha", idCancha);
+  document.location="cancha.html";
+}
+
+function mostrarCanchas() {
+  myApp.showPreloader("Cargando Canchas");
+  $$.ajax({
+    url: 'https://cristobalsguttierrez.000webhostapp.com/verCanchas.php',
+    method: 'POST',
+    dataType: 'json',
+    data: {
+    //Rut: Rut,
+    },
+    success: function(data){
+      console.log("IZI");
+      if(data.resp){
+        myApp.hidePreloader();
+
+        var cantidad = data.cantidad;
+
+        for (var i = 0; i < cantidad; i++) {
+
+          nombreC = data.datos[i].nombre;
+          idCancha = data.datos[i].idCancha;
+
+          text_html ='<li class="item-content">';
+          text_html +='<div class="item-inner">';
+          text_html +='<div class="item-title">'+nombreC+'</div>';
+          text_html +='<p class="buttons-row">';
+          text_html +='<a style="background-color:white; border-color:black;" href="#" onclick="cargarCancha('+idCancha+')" class="button"><FONT COLOR="black">Ir</FONT></a>';
+          text_html +='</p>';
+          text_html +='</div>';
+          text_html +='</li>';
+          cont++;
+          $$('#canchas').append(text_html);
+
+        }
+
+        //--------- Es Solo De Prueba --------------------------//
+        //localStorage.setItem("idCancha", data.datos.idCancha);//
+        //------------------------------------------------------//
+        }else{
+          myApp.hidePreloader();
+          myApp.alert("","No Hay Canchas");
+        }
+    },
+    error: function(){
+      console.log("GG");
+      myApp.alert("El WS no ha respondido","Error");
+    }
+  });
+}
+
 
 function volverPPrincipal(e){
  document.location="index2.html"
 }
 //usar for para agregar canchas cada vez que se ingrese a la pagina canchas
+/*
 function agregarCancha(){
     text_html ='<li class="item-content">';
     text_html +='<div class="item-inner">';
@@ -47,6 +106,7 @@ function agregarCancha(){
 
     $$('#canchas').append(text_html);
 }
+*/
 
 function abrirCancha() {
   myApp.showPreloader("Abriendo Cancha");

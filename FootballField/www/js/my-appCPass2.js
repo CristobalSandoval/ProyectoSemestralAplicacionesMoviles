@@ -34,21 +34,49 @@ function volverCancha() {
 function cambiarClave() {
   //prueba
     console.log("cambiarClave");
-  if($$('#newPass').val().length > 0 && $$('#newPassR').val().length > 0){
-    if ($$('#newPass').val() == $$('#newPassR').val()) {
-      console.log("Las Claves Son Iguales");
-      $$('#newPass').val(value = "");
-      $$('#newPassR').val(value = "");
+
+    if($$('#newPass').val().length > 0 && $$('#newPassR').val().length > 0){
+      if ($$('#newPass').val() == $$('#newPassR').val()) {
+        console.log("Las Claves Son Iguales");
+        //--------------------------------
+        var Rut = localStorage.getItem("usr");
+        var pass = $$('#newPass').val();
+        myApp.showPreloader("Cambiando Clave");
+
+        $$.ajax({
+          url: 'https://cristobalsguttierrez.000webhostapp.com/cambiarContrasena.php',
+          method: 'POST',
+          dataType: 'json',
+          data: {
+          Rut: Rut,
+          pass: pass
+          },
+          success: function(data){
+            console.log("GG");
+            if(data.resp){
+              myApp.hidePreloader();
+              localStorage.setItem("pss", $$('#newPass').val());
+              myApp.alert("","Cambio De Clave Exitoso");
+              document.location = "pPrincipal2.html";
+              }else{
+                myApp.hidePreloader();
+                myApp.alert("LO SENTIMOS","No Se Pudo Realizar El Cambio De Clave");
+              }
+          },
+          error: function(){
+            console.log(Rut);
+            myApp.hidePreloader();
+            myApp.alert("El WS no ha respondido","Error");
+          }
+        });
+
+        //--------------------------------
+      }else {
+        myApp.alert("","Las Claves Son Distintas");
+      }
     }else {
-      console.log("Las Claves Son Distintas");
-      $$('#newPass').val(value = "");
-      $$('#newPassR').val(value = "");
+      myApp.alert("","Debe llenar ambos campos");
     }
-  }else {
-    console.log("Debe llenar ambos campos");
-    $$('#newPass').val(value = "");
-    $$('#newPassR').val(value = "");
-  }
 }
 
 /*

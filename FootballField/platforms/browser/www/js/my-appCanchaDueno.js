@@ -26,7 +26,14 @@ function initapp(){
   $$('#btnInfo2').on('click', abrirInfo);
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnCerrarSesion').on('click', cerrarSesion);
+  $$('#disponibilidad').on('click', abrirDisp);
+
   document.addEventListener("backbutton", volverPP, false);
+}
+
+
+function abrirDisp() {
+  document.location="VReservaD.html"
 }
 
 //--------------------
@@ -34,7 +41,7 @@ function initapp(){
 function mostrarDatos() {
   console.log("click");
   var Rut = localStorage.getItem("usr");//= $$('#Rut').val();
-
+  myApp.showPreloader("Cargando Informacion");
   $$.ajax({
     url: 'https://cristobalsguttierrez.000webhostapp.com/miCancha.php',
     method: 'GET',
@@ -45,6 +52,7 @@ function mostrarDatos() {
     success: function(data){
       console.log("GG");
       if(data.resp){
+        myApp.hidePreloader();
         $$('#NombreCancha').html(data.datos.nombre);
         $$('#ValorHora').html(data.datos.valorHora);
         $$('#hAper').html(data.datos.hApertura);
@@ -53,12 +61,16 @@ function mostrarDatos() {
         $$('#desc').html(data.datos.descripcion);
         lo = parseFloat(data.datos.longitud);
         la = parseFloat(data.datos.latitud);
-
+        //--------- Es Solo De Prueba --------------------------|
+        localStorage.setItem("idCancha", data.datos.idCancha);//|
+        //------------------------------------------------------|
         }else{
+          myApp.hidePreloader();
           myApp.alert("","Usted NO Tiene Una Cancha Registrada");
         }
     },
     error: function(){
+      myApp.hidePreloader();
       console.log(Rut);
       myApp.alert("El WS no ha respondido","Error");
     }

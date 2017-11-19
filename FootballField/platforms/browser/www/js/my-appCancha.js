@@ -27,9 +27,49 @@ function initapp(){
   $$('#btnCerrarMenu').on('click', cerrarMenu);
   $$('#btnLogin').on('click', Abrirlogin);
   $$('#btnSign').on('click', AbrirSign);
-  $$('#disponibilidad').on('click', Adispo);
+  $$('#disp').on('click', Adispo);
   document.addEventListener("backbutton", volverCanchas, false);
 }
+
+function mostrarDatos() {
+  console.log("click");
+  var idCancha = localStorage.getItem("idCancha");//= $$('#Rut').val();
+  myApp.showPreloader("Cargando Informacion");
+  $$.ajax({
+    url: 'https://cristobalsguttierrez.000webhostapp.com/infoCancha.php',
+    method: 'GET',
+    dataType: 'json',
+    data: {
+    idCancha: idCancha
+    },
+    success: function(data){
+      console.log("GG");
+      if(data.resp){
+        myApp.hidePreloader();
+        $$('#NombreCancha').html(data.datos.nombre);
+        $$('#ValorHora').html(data.datos.valorHora);
+        $$('#hAper').html(data.datos.hApertura);
+        $$('#hClau').html(data.datos.hClausura);
+        $$('#Direccion').html(data.datos.direccion);
+        $$('#desc').html(data.datos.descripcion);
+        lo = parseFloat(data.datos.longitud);
+        la = parseFloat(data.datos.latitud);
+        //--------- Es Solo De Prueba --------------------------|
+        //localStorage.setItem("idCancha", data.datos.idCancha);|
+        //------------------------------------------------------|
+        }else{
+          myApp.hidePreloader();
+          myApp.alert("","Usted NO Tiene Una Cancha Registrada");
+        }
+    },
+    error: function(){
+      myApp.hidePreloader();
+      console.log(Rut);
+      myApp.alert("El WS no ha respondido","Error");
+    }
+  });
+}
+
 
 function volverCanchas(e){
    document.location="canchas.html"
